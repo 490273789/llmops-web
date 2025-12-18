@@ -1,5 +1,5 @@
 import { defineConfig, loadEnv, type UserConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { visualizer } from 'rollup-plugin-visualizer';
@@ -10,19 +10,9 @@ const __dirname = dirname(__filename);
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
-  const isAnalyze = env.ANALYZE === 'true';
 
   const config: UserConfig = {
-    plugins: [
-      react(),
-      isAnalyze &&
-        visualizer({
-          open: true,
-          gzipSize: true,
-          brotliSize: true,
-          filename: 'dist/stats.html',
-        }),
-    ].filter(Boolean),
+    plugins: [react()],
 
     resolve: {
       alias: {
@@ -53,7 +43,7 @@ export default defineConfig(({ mode }) => {
     },
 
     server: {
-      port: 3000,
+      port: 3300,
       open: true,
       cors: true,
       proxy: {
@@ -69,42 +59,26 @@ export default defineConfig(({ mode }) => {
       target: 'es2022',
       outDir: 'dist',
       sourcemap: mode !== 'production',
-      minify: 'esbuild',
       rollupOptions: {
         output: {
           manualChunks: (id) => {
             if (id.includes('node_modules')) {
-              if (
-                id.includes('react') ||
-                id.includes('react-dom') ||
-                id.includes('react-router-dom')
-              ) {
-                return 'vendor-react';
-              }
-              if (id.includes('antd') || id.includes('@ant-design/icons')) {
-                return 'vendor-antd';
-              }
-              if (
-                id.includes('zustand') ||
-                id.includes('immer') ||
-                id.includes('dayjs') ||
-                id.includes('clsx')
-              ) {
-                return 'vendor-utils';
-              }
+              return 'vendor';
             }
           },
-          chunkFileNames: 'assets/js/[name]-[hash].js',
-          entryFileNames: 'assets/js/[name]-[hash].js',
-          assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
         },
+        plugins: [
+          mode === 'production' &&
+            visualizer({
+              open: true,
+              gzipSize: true,
+              brotliSize: true,
+              filename: 'dist/stats.html',
+            }),
+        ].filter(Boolean),
       },
       chunkSizeWarningLimit: 1000,
     },
-
-    esbuild: {
-      pure: mode === 'production' ? ['console.log', 'debugger'] : [],
-    } as any,
 
     preview: {
       port: 4173,

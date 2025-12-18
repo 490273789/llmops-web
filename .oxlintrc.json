@@ -19,6 +19,7 @@
     "prefer-const": "error",
     "prefer-arrow-callback": "warn",
     "no-duplicate-imports": "error",
+    "no-named-as-default": "off",
 
     "typescript/no-unused-vars": "warn",
     "typescript/no-explicit-any": "warn",

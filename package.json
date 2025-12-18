@@ -22,9 +22,12 @@
     "axios": "^1.13.2",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.19",
+    "framer-motion": "^12.23.26",
     "immer": "^11.0.1",
+    "lucide-react": "^0.561.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "react-hook-form": "^7.68.0",
     "react-router-dom": "^7.11.0",
     "zustand": "^5.0.9"
   },

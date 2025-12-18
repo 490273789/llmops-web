@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface UseDebounceOptions {
   delay?: number;
@@ -51,4 +51,39 @@ export function useDebouncedCallback<T extends (...args: Parameters<T>) => Retur
       callback(...args);
     }, delay);
   };
+}
+
+/**
+ * 节流 Hook
+ */
+export function useThrottle<T extends (...args: Parameters<T>) => ReturnType<T>>(
+  callback: T,
+  delay: number,
+): (...args: Parameters<T>) => void {
+  const lastRunRef = useRef<number>(0);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  return useCallback((...args: Parameters<T>) => {
+    const now = Date.now();
+    const remaining = delay - (now - lastRunRef.current);
+
+    if (remaining <= 0) {
+      lastRunRef.current = now;
+      callback(...args);
+    } else if (!timeoutRef.current) {
+      timeoutRef.current = setTimeout(() => {
+        lastRunRef.current = Date.now();
+        timeoutRef.current = null;
+        callback(...args);
+      }, remaining);
+    }
+  }, [callback, delay]);
 }

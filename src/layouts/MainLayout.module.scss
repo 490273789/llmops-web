@@ -1,0 +1,145 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  background-color: var(--color-bg-secondary);
+}
+
+/* Sidebar */
+.sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  border-right: 1px solid var(--color-border);
+  transition: width 0.3s ease;
+}
+
+.sidebarExpanded {
+  width: 256px;
+}
+
+.sidebarCollapsed {
+  width: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logoLink {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-primary);
+}
+
+.logoText {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Navigation */
+.nav {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+}
+
+.navLink {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+}
+
+.navLink:hover {
+  background-color: var(--color-bg-tertiary);
+}
+
+.navLinkActive {
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.navIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.logoutBtn {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+}
+
+.logoutBtn:hover {
+  background-color: var(--color-bg-tertiary);
+}
+
+/* Toggle button */
+.toggleBtn {
+  position: absolute;
+  top: 80px;
+  right: -12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+}
+
+.toggleBtn:hover {
+  background-color: var(--color-bg-tertiary);
+}
+
+.toggleIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  overflow: auto;
+}

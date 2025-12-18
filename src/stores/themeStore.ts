@@ -27,6 +27,7 @@ const applyTheme = (theme: 'light' | 'dark') => {
 
   if (theme === 'dark') {
     root.classList.add('dark');
+    // root.classList.toggle('dark', true)
   } else {
     root.classList.remove('dark');
   }

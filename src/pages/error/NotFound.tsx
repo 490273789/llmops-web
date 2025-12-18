@@ -1,22 +1,17 @@
-import type { FC } from 'react';
-import { Button, Result } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Home } from 'lucide-react';
+import styles from '@/styles/pages.module.css';
 
-const NotFound: FC = () => {
-  const navigate = useNavigate();
-
+export default function NotFound() {
   return (
-    <Result
-      status="404"
-      title="404"
-      subTitle="抱歉，您访问的页面不存在"
-      extra={
-        <Button type="primary" onClick={() => navigate('/')}>
-          返回首页
-        </Button>
-      }
-    />
+    <div className={styles.errorPage}>
+      <h1 className={styles.errorCode}>404</h1>
+      <p className={styles.errorTitle}>页面未找到</p>
+      <p className={styles.errorDesc}>您访问的页面不存在或已被移除</p>
+      <Link to="/" className={styles.homeBtn}>
+        <Home className={styles.smallIcon} />
+        返回首页
+      </Link>
+    </div>
   );
-};
-
-export default NotFound;
+}

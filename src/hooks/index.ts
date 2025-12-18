@@ -12,3 +12,4 @@ export {
 } from './useMediaQuery';
 export { useDisclosure } from './useDisclosure';
 export { useDebounce, useDebouncedCallback } from './useDebounce';
+export { useStream } from './useStream';

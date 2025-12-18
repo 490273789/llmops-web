@@ -33,6 +33,8 @@ body {
   background-color: var(--color-bg-primary);
   transition: background-color var(--transition-normal),
     color var(--transition-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {

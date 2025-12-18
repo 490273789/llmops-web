@@ -1,0 +1,151 @@
+// ============================================================
+// LLMOps Platform - Ant Design 6 Theme Customization
+// ============================================================
+// Ant Design 6 使用 CSS-in-JS 和 CSS Variables
+// 大部分样式通过 ConfigProvider theme 配置
+// 此文件仅用于全局样式微调和语义化结构样式
+// ============================================================
+
+@use "variables" as *;
+
+// ============================================================
+// Ant Design 6 CSS Variable 兼容层
+// Ant Design 6 默认启用 cssVar，变量名格式为 --ant-*
+// ============================================================
+
+:root {
+  // 与设计系统集成 - 通过 CSS 变量桥接
+  // Ant Design 6 会自动生成这些变量，这里仅作为后备
+}
+
+// ============================================================
+// Component-Specific Overrides (Ant Design 6)
+// 注意：Ant Design 6 引入了语义化结构 (classNames/styles)
+// 优先使用 ConfigProvider 配置，仅在必要时覆盖
+// ============================================================
+
+// Layout - 适配深色模式
+.ant-layout {
+  background: var(--color-bg-primary);
+}
+
+.ant-layout-sider {
+  background: var(--color-bg-secondary);
+}
+
+.ant-layout-header {
+  background: var(--color-bg-secondary);
+}
+
+// Menu
+.ant-menu {
+  background: transparent;
+
+  &.ant-menu-dark {
+    background: var(--color-bg-secondary);
+  }
+}
+
+// Card
+.ant-card {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-border-primary);
+  border-radius: var(--radius-lg);
+}
+
+// Button - Ant Design 6 新增 solid/outlined/dashed 变体
+.ant-btn {
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+// Input - Ant Design 6 废弃了 addonBefore/addonAfter，使用 Space.Compact
+.ant-input,
+.ant-input-affix-wrapper {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-border-primary);
+  border-radius: var(--radius-md);
+
+  &:hover {
+    border-color: var(--color-primary-light);
+  }
+
+  &:focus,
+  &-focused {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgb(99 102 241 / 20%);
+  }
+}
+
+// Select
+.ant-select-selector {
+  background: var(--color-bg-secondary) !important;
+  border-color: var(--color-border-primary) !important;
+  border-radius: var(--radius-md) !important;
+}
+
+// Table
+.ant-table {
+  background: var(--color-bg-secondary);
+
+  .ant-table-thead > tr > th {
+    background: var(--color-bg-tertiary);
+  }
+}
+
+// Modal
+.ant-modal-content {
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-xl);
+}
+
+// Drawer - Ant Design 6 新增 resizable 支持
+.ant-drawer-content {
+  background: var(--color-bg-secondary);
+}
+
+// Dropdown
+.ant-dropdown-menu {
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+// Message & Notification
+.ant-message-notice-content,
+.ant-notification-notice {
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+// Tooltip
+.ant-tooltip-inner {
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+}
+
+// Tabs
+.ant-tabs-tab {
+  color: var(--color-text-secondary);
+
+  &.ant-tabs-tab-active {
+    color: var(--color-primary);
+  }
+}
+
+// Tag
+.ant-tag {
+  border-radius: var(--radius-sm);
+}
+
+// Badge
+.ant-badge-status-dot {
+  width: 8px;
+  height: 8px;
+}
+
+// Progress
+.ant-progress-bg {
+  background: var(--color-primary);
+}

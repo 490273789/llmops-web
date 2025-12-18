@@ -1,0 +1,239 @@
+// ============================================================
+// LLMOps Platform - CSS Custom Properties (Design Tokens)
+// ============================================================
+// This file defines CSS custom properties for theming
+// Supports light and dark mode switching
+// ============================================================
+
+@use "variables" as *;
+
+:root {
+  // ============================================================
+  // Color System - Light Theme (Default)
+  // ============================================================
+
+  // Brand Colors
+  --color-primary: #{$brand-primary};
+  --color-primary-light: #{$brand-primary-light};
+  --color-primary-dark: #{$brand-primary-dark};
+  --color-secondary: #{$brand-secondary};
+  --color-accent: #{$brand-accent};
+
+  // Background Colors
+  --color-bg-primary: #{$neutral-50};
+  --color-bg-secondary: #fff;
+  --color-bg-tertiary: #{$neutral-100};
+  --color-bg-elevated: #fff;
+  --color-bg-hover: #{$neutral-100};
+  --color-bg-active: #{$neutral-200};
+  --color-bg-mask: rgb(0 0 0 / 45%);
+
+  // Text Colors
+  --color-text-primary: #{$neutral-900};
+  --color-text-secondary: #{$neutral-600};
+  --color-text-tertiary: #{$neutral-500};
+  --color-text-quaternary: #{$neutral-400};
+  --color-text-inverse: #fff;
+  --color-text-link: #{$brand-primary};
+  --color-text-link-hover: #{$brand-primary-dark};
+
+  // Border Colors
+  --color-border-primary: #{$neutral-200};
+  --color-border-secondary: #{$neutral-300};
+  --color-border-focus: #{$brand-primary};
+
+  // Semantic Colors
+  --color-success: #{$color-success};
+  --color-success-light: #{$color-success-light};
+  --color-success-bg: rgb(34 197 94 / 10%);
+  --color-warning: #{$color-warning};
+  --color-warning-light: #{$color-warning-light};
+  --color-warning-bg: rgb(245 158 11 / 10%);
+  --color-error: #{$color-error};
+  --color-error-light: #{$color-error-light};
+  --color-error-bg: rgb(239 68 68 / 10%);
+  --color-info: #{$color-info};
+  --color-info-light: #{$color-info-light};
+  --color-info-bg: rgb(59 130 246 / 10%);
+
+  // ============================================================
+  // Typography
+  // ============================================================
+
+  --font-family-sans: #{$font-family-sans};
+  --font-family-mono: #{$font-family-mono};
+  --font-size-xs: #{$font-size-xs};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-base: #{$font-size-base};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-2xl: #{$font-size-2xl};
+  --font-size-3xl: #{$font-size-3xl};
+  --font-size-4xl: #{$font-size-4xl};
+  --font-size-5xl: #{$font-size-5xl};
+  --font-weight-normal: #{$font-weight-normal};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --font-weight-bold: #{$font-weight-bold};
+  --line-height-tight: #{$line-height-tight};
+  --line-height-normal: #{$line-height-normal};
+  --line-height-relaxed: #{$line-height-relaxed};
+
+  // ============================================================
+  // Spacing
+  // ============================================================
+
+  --spacing-1: #{$spacing-1};
+  --spacing-2: #{$spacing-2};
+  --spacing-3: #{$spacing-3};
+  --spacing-4: #{$spacing-4};
+  --spacing-5: #{$spacing-5};
+  --spacing-6: #{$spacing-6};
+  --spacing-8: #{$spacing-8};
+  --spacing-10: #{$spacing-10};
+  --spacing-12: #{$spacing-12};
+  --spacing-16: #{$spacing-16};
+
+  // ============================================================
+  // Border Radius
+  // ============================================================
+
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --radius-2xl: #{$radius-2xl};
+  --radius-full: #{$radius-full};
+
+  // ============================================================
+  // Shadows
+  // ============================================================
+
+  --shadow-xs: #{$shadow-xs};
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-xl: #{$shadow-xl};
+
+  // ============================================================
+  // Transitions
+  // ============================================================
+
+  --transition-fast: #{$transition-duration-fast} #{$transition-timing-default};
+  --transition-normal: #{$transition-duration-normal}
+    #{$transition-timing-default};
+  --transition-slow: #{$transition-duration-slow} #{$transition-timing-default};
+
+  // ============================================================
+  // Z-Index
+  // ============================================================
+
+  --z-dropdown: #{$z-index-dropdown};
+  --z-sticky: #{$z-index-sticky};
+  --z-fixed: #{$z-index-fixed};
+  --z-modal-backdrop: #{$z-index-modal-backdrop};
+  --z-modal: #{$z-index-modal};
+  --z-popover: #{$z-index-popover};
+  --z-tooltip: #{$z-index-tooltip};
+  --z-toast: #{$z-index-toast};
+
+  // ============================================================
+  // Layout
+  // ============================================================
+
+  --sidebar-width: #{$sidebar-width};
+  --sidebar-collapsed-width: #{$sidebar-collapsed-width};
+  --header-height: #{$header-height};
+  --footer-height: #{$footer-height};
+  --content-max-width: #{$content-max-width};
+}
+
+// ============================================================
+// Dark Theme
+// ============================================================
+
+[data-theme="dark"],
+.dark {
+  // Background Colors
+  --color-bg-primary: #{$neutral-950};
+  --color-bg-secondary: #{$neutral-900};
+  --color-bg-tertiary: #{$neutral-800};
+  --color-bg-elevated: #{$neutral-800};
+  --color-bg-hover: #{$neutral-800};
+  --color-bg-active: #{$neutral-700};
+  --color-bg-mask: rgb(0 0 0 / 70%);
+
+  // Text Colors
+  --color-text-primary: #{$neutral-50};
+  --color-text-secondary: #{$neutral-300};
+  --color-text-tertiary: #{$neutral-400};
+  --color-text-quaternary: #{$neutral-500};
+  --color-text-inverse: #{$neutral-900};
+  --color-text-link: #{$brand-primary-light};
+  --color-text-link-hover: #{$brand-primary};
+
+  // Border Colors
+  --color-border-primary: #{$neutral-700};
+  --color-border-secondary: #{$neutral-600};
+
+  // Semantic Background Colors
+  --color-success-bg: rgb(34 197 94 / 15%);
+  --color-warning-bg: rgb(245 158 11 / 15%);
+  --color-error-bg: rgb(239 68 68 / 15%);
+  --color-info-bg: rgb(59 130 246 / 15%);
+
+  // Shadows (darker for dark mode)
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 30%);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 40%), 0 1px 2px -1px rgb(0 0 0 / 40%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 40%), 0 2px 4px -2px rgb(0 0 0 / 40%);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 40%), 0 4px 6px -4px rgb(0 0 0 / 40%);
+  --shadow-xl:
+    0 20px 25px -5px rgb(0 0 0 / 40%), 0 8px 10px -6px rgb(0 0 0 / 40%);
+}
+
+// ============================================================
+// System Preference Based Dark Mode
+// ============================================================
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    // Background Colors
+    --color-bg-primary: #{$neutral-950};
+    --color-bg-secondary: #{$neutral-900};
+    --color-bg-tertiary: #{$neutral-800};
+    --color-bg-elevated: #{$neutral-800};
+    --color-bg-hover: #{$neutral-800};
+    --color-bg-active: #{$neutral-700};
+    --color-bg-mask: rgb(0 0 0 / 70%);
+
+    // Text Colors
+    --color-text-primary: #{$neutral-50};
+    --color-text-secondary: #{$neutral-300};
+    --color-text-tertiary: #{$neutral-400};
+    --color-text-quaternary: #{$neutral-500};
+    --color-text-inverse: #{$neutral-900};
+    --color-text-link: #{$brand-primary-light};
+    --color-text-link-hover: #{$brand-primary};
+
+    // Border Colors
+    --color-border-primary: #{$neutral-700};
+    --color-border-secondary: #{$neutral-600};
+
+    // Semantic Background Colors
+    --color-success-bg: rgb(34 197 94 / 15%);
+    --color-warning-bg: rgb(245 158 11 / 15%);
+    --color-error-bg: rgb(239 68 68 / 15%);
+    --color-info-bg: rgb(59 130 246 / 15%);
+
+    // Shadows
+    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 30%);
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 40%), 0 1px 2px -1px rgb(0 0 0 / 40%);
+    --shadow-md:
+      0 4px 6px -1px rgb(0 0 0 / 40%), 0 2px 4px -2px rgb(0 0 0 / 40%);
+    --shadow-lg:
+      0 10px 15px -3px rgb(0 0 0 / 40%), 0 4px 6px -4px rgb(0 0 0 / 40%);
+    --shadow-xl:
+      0 20px 25px -5px rgb(0 0 0 / 40%), 0 8px 10px -6px rgb(0 0 0 / 40%);
+  }
+}

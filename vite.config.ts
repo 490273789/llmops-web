@@ -63,12 +63,25 @@ export default defineConfig(({ mode }) => {
         output: {
           manualChunks: (id) => {
             if (id.includes('node_modules')) {
+              // 将大型依赖分离打包
+              if (id.includes('antd') || id.includes('@ant-design')) {
+                return 'antd';
+              }
+              if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+                return 'react';
+              }
+              if (id.includes('framer-motion')) {
+                return 'framer-motion';
+              }
+              if (id.includes('lucide-react')) {
+                return 'icons';
+              }
               return 'vendor';
             }
           },
         },
         plugins: [
-          mode === 'production' &&
+          env.ANALYZE === 'true' &&
             visualizer({
               open: true,
               gzipSize: true,

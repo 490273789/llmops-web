@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface UseDebounceOptions {
   delay?: number;
@@ -71,7 +71,7 @@ export function useThrottle<T extends (...args: Parameters<T>) => ReturnType<T>>
     };
   }, []);
 
-  return useCallback((...args: Parameters<T>) => {
+  return (...args: Parameters<T>) => {
     const now = Date.now();
     const remaining = delay - (now - lastRunRef.current);
 
@@ -85,5 +85,5 @@ export function useThrottle<T extends (...args: Parameters<T>) => ReturnType<T>>
         callback(...args);
       }, remaining);
     }
-  }, [callback, delay]);
+  };
 }

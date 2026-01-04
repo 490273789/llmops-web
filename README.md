@@ -18,7 +18,7 @@
 ## ✨ 特性
 
 - 🚀 **最新技术栈** - React 19 + TypeScript 5.9 + Vite 8 (rolldown)
-- 🎨 **UI 设计系统** - 基于 Ant Design 5，支持深色模式
+- 🎨 **UI 设计系统** - 基于 Ant Design 6，支持深色模式
 - 📦 **状态管理** - Zustand 轻量级状态管理
 - 🔧 **代码质量** - Oxlint + Oxfmt + Stylelint
 - 📱 **响应式设计** - 移动端友好
@@ -26,20 +26,20 @@
 
 ## 🛠 技术栈
 
-| 类别 | 技术 |
-|------|------|
-| 框架 | React 19 |
-| 语言 | TypeScript 5.9 |
-| 构建 | Vite 8 (Rolldown) |
-| UI 库 | Ant Design 5 |
-| 状态管理 | Zustand 5 |
-| 路由 | React Router 7 |
-| 样式 | SCSS Modules + CSS Variables |
-| 代码检查 | Oxlint |
-| 格式化 | Oxfmt |
-| 样式检查 | Stylelint |
-| Git Hooks | Husky + lint-staged |
-| 提交规范 | Commitlint + Commitizen |
+| 类别      | 技术                         |
+| --------- | ---------------------------- |
+| 框架      | React 19                     |
+| 语言      | TypeScript 5.9               |
+| 构建      | Vite 8 (Rolldown)            |
+| UI 库     | Ant Design 5                 |
+| 状态管理  | Zustand 5                    |
+| 路由      | React Router 7               |
+| 样式      | SCSS Modules + CSS Variables |
+| 代码检查  | Oxlint                       |
+| 格式化    | Oxfmt                        |
+| 样式检查  | Stylelint                    |
+| Git Hooks | Husky + lint-staged          |
+| 提交规范  | Commitlint + Commitizen      |
 
 ## 📁 项目结构
 
@@ -106,18 +106,18 @@ pnpm preview
 
 ## 📝 可用脚本
 
-| 命令 | 描述 |
-|------|------|
-| `pnpm dev` | 启动开发服务器 |
-| `pnpm build` | 构建生产版本 |
-| `pnpm preview` | 预览生产构建 |
-| `pnpm lint` | 运行 Oxlint 代码检查 |
-| `pnpm format` | 使用 Oxfmt 格式化代码 |
-| `pnpm format:check` | 检查代码格式 |
-| `pnpm stylelint` | 运行样式检查 |
-| `pnpm type-check` | TypeScript 类型检查 |
-| `pnpm analyze` | 构建并分析打包体积 |
-| `pnpm commit` | 使用 Commitizen 提交 |
+| 命令                | 描述                  |
+| ------------------- | --------------------- |
+| `pnpm dev`          | 启动开发服务器        |
+| `pnpm build`        | 构建生产版本          |
+| `pnpm preview`      | 预览生产构建          |
+| `pnpm lint`         | 运行 Oxlint 代码检查  |
+| `pnpm format`       | 使用 Oxfmt 格式化代码 |
+| `pnpm format:check` | 检查代码格式          |
+| `pnpm stylelint`    | 运行样式检查          |
+| `pnpm type-check`   | TypeScript 类型检查   |
+| `pnpm analyze`      | 构建并分析打包体积    |
+| `pnpm commit`       | 使用 Commitizen 提交  |
 
 ## 🎨 设计规范
 
@@ -126,6 +126,7 @@ pnpm preview
 ### 主题切换
 
 支持三种主题模式：
+
 - 🌞 浅色模式
 - 🌙 深色模式
 - 💻 跟随系统
@@ -158,6 +159,7 @@ pnpm commit
 ## 🔧 IDE 配置
 
 推荐使用 VS Code，并安装以下扩展：
+
 - Oxc (Oxlint + Oxfmt)
 - Stylelint
 - EditorConfig for VS Code

@@ -1,16 +1,21 @@
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
-import { NotFound } from '@/pages';
-import { Suspense, type ReactNode } from 'react';
+import { Suspense, lazy, type ReactNode } from 'react';
 import { Loading } from '../components';
-import { AuthLayout, MainLayout, Layout } from '../layouts';
-import Dashboard from '../pages/dashboard';
-import Apps from '../pages/apps';
-import AppCreate from '../pages/apps/create';
-import AppDetail from '../pages/apps/detail';
 
-import Login from '../pages/auth/login';
-import Settings from '../pages/settings';
-import Configs from '@pages/configs/configs';
+// 懒加载布局组件
+const MainLayout = lazy(() => import('../layouts/MainLayout'));
+const AuthLayout = lazy(() => import('../layouts/AuthLayout'));
+const Layout = lazy(() => import('../layouts/Layout'));
+
+// 懒加载页面组件
+const Dashboard = lazy(() => import('../pages/dashboard'));
+const Apps = lazy(() => import('../pages/apps'));
+const AppCreate = lazy(() => import('../pages/apps/create'));
+const AppDetail = lazy(() => import('../pages/apps/detail'));
+const Login = lazy(() => import('../pages/auth/login'));
+const Settings = lazy(() => import('../pages/settings'));
+const Configs = lazy(() => import('@pages/configs/configs'));
+const NotFound = lazy(() => import('../pages/error/NotFound'));
 
 // 懒加载包装器
 function LazyLoad({ children }: { children: ReactNode }) {

@@ -38,7 +38,7 @@ http.interceptors.response.use(
     const { data } = response;
 
     // 业务错误处理
-    if (data.code !== 0 && data.code !== 200) {
+    if (data.code !== 0) {
       return Promise.reject(new Error(data.message || '请求失败'));
     }
 

@@ -1,6 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
-
-type MediaQueryCallback = (matches: boolean) => void;
+import { useEffect, useState } from 'react';
 
 export function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState<boolean>(() => {
@@ -8,9 +6,9 @@ export function useMediaQuery(query: string): boolean {
     return window.matchMedia(query).matches;
   });
 
-  const handleChange = useCallback<MediaQueryCallback>((newMatches) => {
+  const handleChange = (newMatches: boolean) => {
     setMatches(newMatches);
-  }, []);
+  };
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(query);
@@ -22,7 +20,7 @@ export function useMediaQuery(query: string): boolean {
 
     mediaQuery.addEventListener('change', handler);
     return () => mediaQuery.removeEventListener('change', handler);
-  }, [query, handleChange]);
+  }, [query]);
 
   return matches;
 }

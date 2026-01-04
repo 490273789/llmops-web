@@ -3,14 +3,14 @@
 // ============================================================
 
 // Core design system
-@forward "variables";
-@forward "theme";
+@forward 'variables';
+@forward 'theme';
 
 // Global styles
-@use "global";
+@use 'global';
 
 // UI Library overrides
-@use "antd-overrides";
+@use 'antd-overrides';
 
 // 动画
-@use "animations";
+@use 'animations';

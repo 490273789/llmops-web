@@ -11,11 +11,7 @@
   align-items: center;
   justify-content: center;
   width: 40%;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-primary-hover)
-  );
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
 }
 
 @media (width >= 1024px) {

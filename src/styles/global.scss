@@ -2,8 +2,8 @@
 // LLMOps Platform - Global Styles
 // ============================================================
 
-@use "variables" as *;
-@use "theme";
+@use 'variables' as *;
+@use 'theme';
 
 // ============================================================
 // CSS Reset & Base Styles
@@ -31,7 +31,8 @@ body {
   line-height: var(--line-height-normal);
   color: var(--color-text-primary);
   background-color: var(--color-bg-primary);
-  transition: background-color var(--transition-normal),
+  transition:
+    background-color var(--transition-normal),
     color var(--transition-normal);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
